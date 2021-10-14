@@ -1,0 +1,76 @@
+body {
+  display: grid;
+  place-content: center;
+  height: 100vh;
+  overflow: hidden;
+  font-size: 120%;
+  text-align: center;
+}
+
+#container {
+  background: var(--color-main-light);
+  border: var(--default-border);
+  margin-bottom: 15vh;
+  width: 20em;
+  box-shadow: var(--default-box-shadow);
+  padding: 2em;
+}
+
+#container img {
+  width: 50%;
+  justify-self: center;
+}
+
+#myForm {
+  display: inline-grid;
+  grid-auto-flow: row;
+  padding: 1em;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+#myForm > input, #myForm > button {
+  text-align: center;
+  padding: 0.5em;
+  border: solid 1px var(--color-main-dark);
+  border-radius: 9999px;
+  margin-top: 0.75em;
+  font-size: 100%;
+  font-family: customFont;
+  color: var(--color_background);
+  cursor: pointer;
+}
+
+#myForm > input:first-of-type {
+  margin-top: 0em;
+}
+
+#myForm > button {
+  color: white;
+  background: var(--color-main-dark);
+  font-weight: 600;
+  font-size: 125%;
+}
+
+#answer {
+  margin: 0;
+  padding: 1em;
+  border-radius: 0 0 var(--default_border_radius) var(--default_border_radius);
+  background: var(--color_accent);
+  font-size: 120%;
+  font-weight: 900;
+}
+
+@keyframes shake {
+  0% { transform: translate(0px, 0);}
+  10% { transform: translate(1px, 0);}
+  20% { transform: translate(3px, 0);}
+  30% { transform: translate(5px, 0);}
+  40% { transform: translate(3px, 0);}
+  50% { transform: translate(1px, 0);}
+  60% { transform: translate(-1px, 0);}
+  70% { transform: translate(-3px, 0));}
+  80% { transform: translate(-5px, 0);}
+  90% { transform: translate(-3px, 0);}
+  100% { transform: translate(-1px, 0));}
+}

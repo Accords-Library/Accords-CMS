@@ -1,0 +1,88 @@
+@font-face {
+  font-family: customFont;
+  src: url("/font/Quicksand-VariableFont_wght.ttf");
+}
+
+:root {
+  --break-point: 60em;
+}
+
+body {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr var(--break-point) 1fr;
+  place-content: center;
+  overflow-x: hidden;
+}
+
+body > .container {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  border: var(--default-border);
+  box-shadow: var(--default-box-shadow);
+  grid-column: 2;
+  transition: 1s margin-top;
+}
+
+body > .container > .content {
+  padding: 2rem;
+}
+
+#admin-bar {
+  max-width: var(--break-point);
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-auto-flow: column;
+  align-items: center;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  box-sizing: border-box;
+  background-color: var(--color-main-dark);
+  color: var(--color-main-light);
+}
+
+#admin-bar > #logout > .button {
+  margin-left: 1rem;
+}
+
+.content > .title {
+  display: grid;
+  grid-gap: 1rem;
+  grid-auto-flow: column;
+  place-content: start;
+  place-items: center start;
+}
+
+.page-list {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr auto auto auto;
+  grid-row-gap: 0.5rem;
+}
+
+.page-list > * {
+  width: auto;
+}
+
+.page-list > .button {
+  place-self: center;
+}
+
+.page-list p {
+  margin-top: .5em;
+  margin-bottom: .5em;
+  font-weight: bold;
+}
+
+
+@media only screen and (max-width: 60em) {
+  body {
+    grid-template-columns: 1fr;
+  }
+
+  body > .container {
+    grid-column: 1;
+    margin-top: 0;
+    border: unset;
+    box-shadow: unset;
+  }
+}

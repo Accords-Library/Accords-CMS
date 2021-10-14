@@ -1,0 +1,39 @@
+@font-face {
+  font-family: customFont;
+  src: url("/font/Quicksand-VariableFont_wght.ttf");
+}
+
+:root {
+  --color-main-light: #FFF8E7;
+  --color-main-base: #ffEBCD;
+  --color-main-dark: #954535;
+  --color-main-black: #1B1811;
+  --default-border: solid 1px var(--color-main-dark);
+  --default-box-shadow: #95453529 0 0 2em;
+}
+
+body {
+  background: var(--color-main-light);
+  color: var(--color-main-black);
+  font-family: customFont;
+  margin: 0;
+  padding: 0;
+}
+
+.button {
+  background: var(--color-main-light);
+  padding: 0.3em 1.1em;
+  color: var(--color-main-dark);
+  transition: .1s background-color, .1s color, .1s border;
+  border: solid 2px var(--color-main-dark);
+  border-radius: 9999px;
+  text-decoration-line: none;
+  margin-left: 0.3em;
+  margin-right: 0.3em;
+}
+
+.button:hover {
+  background: var(--color-main-dark);
+  color: var(--color-main-light);
+  border: solid 2px var(--color-main-dark);
+}

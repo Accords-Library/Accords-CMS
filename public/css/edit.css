@@ -1,0 +1,31 @@
+body {
+  display: grid;
+  place-content: center;
+}
+
+textarea {
+  padding: 1em;
+  margin-top: 1em;
+  min-width: 100%;
+  max-width: 100%;
+  height: 30em;
+  box-sizing: border-box;
+  background-color: inherit;
+  border: var(--default-border);
+  border-radius: 1em;
+}
+
+input[type = text] {
+  background-color: inherit;
+  border: var(--default-border);
+  padding: 0.3em 1em;
+  border-radius: 9999px;
+}
+
+input[type = submit] {
+  margin-top: 1em;
+}
+
+textarea:focus-visible, input:focus-visible {
+  outline: unset;
+}

@@ -1,1 +1,6 @@
-
+Parsedown.php
+credentials.csv
+pages/*
+public/font/*
+public/img/*
+!.gitkeep
