@@ -1,6 +1,6 @@
 Parsedown.php
-credentials.csv
 pages/*
+users/*
 public/font/*
 public/img/*
 !.gitkeep

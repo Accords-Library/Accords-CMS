@@ -5,7 +5,7 @@
 
 :root {
   --color-main-light: #FFF8E7;
-  --color-main-base: #ffEBCD;
+  --color-main-base: #FFEBCD;
   --color-main-dark: #954535;
   --color-main-black: #1B1811;
   --default-border: solid 1px var(--color-main-dark);
@@ -21,19 +21,61 @@ body {
 }
 
 .button {
-  background: var(--color-main-light);
+  background-color: var(--color-main-light);
   padding: 0.3em 1.1em;
   color: var(--color-main-dark);
   transition: .1s background-color, .1s color, .1s border;
-  border: solid 2px var(--color-main-dark);
-  border-radius: 9999px;
+  border-radius: 100vmax;
   text-decoration-line: none;
   margin-left: 0.3em;
   margin-right: 0.3em;
+  display: grid;
+  place-content: center;
+  border: unset;
+  cursor: pointer;
 }
 
 .button:hover {
   background: var(--color-main-dark);
   color: var(--color-main-light);
-  border: solid 2px var(--color-main-dark);
+  border-color: var(--color-main-dark);
+}
+
+.button.icon {
+  width: 2em;
+  height: 1.6em;
+  padding: 0em;
+}
+
+.button.outline {
+  border: solid 0.1em var(--color-main-dark);
+}
+
+.button.invert {
+  border-color: var(--color-main-light);
+}
+
+.button.invert {
+  color: var(--color-main-light);
+  background-color: var(--color-main-dark);
+}
+
+.button.invert:hover {
+  color: var(--color-main-dark);
+  background-color: var(--color-main-light);
+}
+
+.button.invert.active {
+  color: var(--color-main-dark);
+  background-color: var(--color-main-light);
+}
+
+.button.disabled {
+  cursor: no-drop;
+  opacity: 0.4;
+}
+
+.button.disabled:hover {
+  color: var(--color-main-dark);
+  background-color: inherit;
 }

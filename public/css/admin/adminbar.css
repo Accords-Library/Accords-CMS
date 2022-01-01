@@ -1,0 +1,22 @@
+#admin-bar {
+  max-width: var(--break-point);
+  display: grid;
+  grid-auto-flow: column;
+  place-items: center;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  box-sizing: border-box;
+  background-color: var(--color-main-dark);
+  color: var(--color-main-light);
+}
+
+#admin-bar > #logout {
+  display: grid;
+  grid-auto-flow: column;
+  place-items: center end;
+  grid-gap: .5em;
+}
+
+#admin-bar > a {
+  font-size: 1.5em;
+}

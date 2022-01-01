@@ -1,8 +1,3 @@
-@font-face {
-  font-family: customFont;
-  src: url("/font/Quicksand-VariableFont_wght.ttf");
-}
-
 :root {
   --break-point: 60em;
 }
@@ -28,23 +23,6 @@ body > .container > .content {
   padding: 2rem;
 }
 
-#admin-bar {
-  max-width: var(--break-point);
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-auto-flow: column;
-  align-items: center;
-  padding-left: 2rem;
-  padding-right: 2rem;
-  box-sizing: border-box;
-  background-color: var(--color-main-dark);
-  color: var(--color-main-light);
-}
-
-#admin-bar > #logout > .button {
-  margin-left: 1rem;
-}
-
 .content > .title {
   display: grid;
   grid-gap: 1rem;
@@ -52,27 +30,6 @@ body > .container > .content {
   place-content: start;
   place-items: center start;
 }
-
-.page-list {
-  display: grid;
-  grid-template-columns: 2fr 1fr 1fr auto auto auto;
-  grid-row-gap: 0.5rem;
-}
-
-.page-list > * {
-  width: auto;
-}
-
-.page-list > .button {
-  place-self: center;
-}
-
-.page-list p {
-  margin-top: .5em;
-  margin-bottom: .5em;
-  font-weight: bold;
-}
-
 
 @media only screen and (max-width: 60em) {
   body {

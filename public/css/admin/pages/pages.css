@@ -1,0 +1,19 @@
+.page-list {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr auto auto auto;
+  grid-row-gap: 0.5rem;
+}
+
+.page-list > * {
+  width: auto;
+}
+
+.page-list > .button {
+  place-self: center;
+}
+
+.page-list p {
+  margin-top: .5em;
+  margin-bottom: .5em;
+  font-weight: bold;
+}

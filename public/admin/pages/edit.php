@@ -4,15 +4,16 @@
     <meta charset="utf-8">
     <title></title>
     <link rel="stylesheet" href="/css/master.css">
-    <link rel="stylesheet" href="/css/admin.css">
-    <link rel="stylesheet" href="/css/edit.css">
+    <link rel="stylesheet" href="/css/admin/admin.css">
+    <link rel="stylesheet" href="/css/admin/pages/edit.css">
   </head>
   <body>
 
     <div class="container">
 
-      <?php require_once($_SERVER["DOCUMENT_ROOT"] . "/admin/admin-bar.php") ?>
-      <?php require_once($_SERVER["DOCUMENT_ROOT"] . "/admin/tools.php") ?>
+      <?php require_once($_SERVER["DOCUMENT_ROOT"] . "/../templates/admin/adminbar.php") ?>
+      <?php require_once($_SERVER["DOCUMENT_ROOT"] . "/../php/tools/pages.php") ?>
+      <?php require_once($_SERVER["DOCUMENT_ROOT"] . "/../php/tools/admin.php") ?>
 
       <div class="content">
 
@@ -50,12 +51,12 @@
 
           $page->write();
 
-          header('Location: /admin');
+          header('Location: /admin/pages');
           exit();
 
-        } else if (isset($_GET['page'])) {
+        } else if (isset($_GET['slug'])) {
 
-          $page = new Page($_GET['page']);
+          $page = new Page($_GET['slug']);
 
           if ($page->slug) {
             echo "<h2>Editing $page->title</h2>";
@@ -68,8 +69,8 @@
             https://new.accords-library.com/<input type='text' name='slug' placeholder='' value='$page->slug' required><br>
             Title: <input type='text' name='title' placeholder='A great title...' value='$page->title' required><br>
             <textarea name='content' placeholder='Some awesome content...'>$page->content</textarea><br>
-            <input type='hidden' name='originalSlug' value='" . $_GET['page'] . "'>
-            <input class='button' type='submit'>
+            <input type='hidden' name='originalSlug' value='" . $_GET['slug'] . "'>
+            <input class='button outline' type='submit'>
           </form>
           ";
         }

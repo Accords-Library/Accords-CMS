@@ -19,38 +19,25 @@
 
       <?php
 
-        if (session_status() == PHP_SESSION_NONE) {
-          session_start();
-        }
-
-        function verifyKey($username, $password) {
-          $csv = file_get_contents($_SERVER["DOCUMENT_ROOT"] . '/../credentials.csv');
-          $hashes = explode(PHP_EOL, $csv);
-          foreach ($hashes as $hash) {
-            $hash = explode(';', $hash);
-            if ($hash[0] == $username) {
-              $hash = substr($hash[2], 0, -1);
-              return password_verify($password, $hash);
-            }
-          }
-          return false;
-        }
-
         if ($_POST['submitButton'] == "Submit") {
 
           $username = filter_var($_POST["username"], FILTER_SANITIZE_STRING);
           $password = filter_var($_POST["password"], FILTER_SANITIZE_STRING);
 
+          require_once($_SERVER["DOCUMENT_ROOT"] . "/../php/tools/crypto.php");
+
+          if (session_status() == PHP_SESSION_NONE) {
+            session_start();
+          }
+
           if (verifyKey($username, $password)) {
             $_SESSION['loginUsername'] = $username;
-            header('Location: /admin');
+            header('Location: /admin/pages');
           } else {
             unset($_SESSION['loginUsername']);
             echo '<p id="answer">The account name or password that you have entered is incorrect.</p>';
             echo '<style>body{animation: bw 1s;animation-fill-mode: forwards;}#container{animation: shake 0.2s;animation-iteration-count: 2;}</style>';
           }
-
-          //echo '<p>' . $username . ';' . password_hash($password, PASSWORD_DEFAULT) . '</p>';
 
         }
 
